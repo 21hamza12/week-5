@@ -1,0 +1,59 @@
+
+enum Branch {
+    MATH("i like math"),
+    PHYSICS("i hate physics because its hard"),
+    CS("i dont know"),
+    ENG("i love english too");
+
+    private final String description;
+
+    
+    Branch(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+}
+
+
+class Teacher {
+    private int id;
+    private Branch branch;
+
+    
+    public Teacher(int id, Branch branch) {
+        this.id = id;
+        this.branch = branch;
+    }
+
+    
+    public Branch getBranch() {
+        return branch;
+    }
+
+    
+    public int getId() {
+        return id;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create four teacher objects with different branches
+        Teacher teacher1 = new Teacher(101, Branch.MATH);
+        Teacher teacher2 = new Teacher(102, Branch.PHYSICS);
+        Teacher teacher3 = new Teacher(103, Branch.CS);
+        Teacher teacher4 = new Teacher(104, Branch.ENG);
+
+        
+        Teacher[] teachers = {teacher1, teacher2, teacher3, teacher4};
+
+      
+        for (Teacher teacher : teachers) {
+            System.out.println("Teacher ID: " + teacher.getId() + ", Branch: " + teacher.getBranch() +
+                    ", Description: " + teacher.getBranch().getDescription());
+        }
+    }
+}
